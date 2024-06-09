@@ -40,7 +40,7 @@ def add_pet():
         new_pet = Pet(name= form.name.data, age=form.age.data, species= form.species.data, photo_url =form.photo_url.data, notes = form.notes.data)
         db.session.add(new_pet)
         db.session.commit()
-        flash(f"{new_pet} is now here!")
+        flash(f"{new_pet.name} is now here!")
         return redirect(url_for('display_pets'))
     
     else:
