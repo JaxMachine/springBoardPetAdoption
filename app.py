@@ -61,7 +61,7 @@ def edit_pet(pet_id):
         pet.photo_url = form.photo_url.data
         db.session.commit()
         flash(f"{pet.name} has been updated.")
-        return redirect(url_for('list_pets'))
+        return redirect(url_for('display_pets'))
     
     else:
         #return form for editing
