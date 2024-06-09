@@ -66,14 +66,3 @@ def edit_pet(pet_id):
     else:
         #return form for editing
         return render_template("pet_edit_form.html", form=form, pet=pet)
-    
-
-@app.route("/api/pets/<int:pet_id>", methods=['GET'])
-def api_get_pet(pet_id):
-    """Return basic info about pet in JSON."""
-
-    pet = Pet.query.get_or_404(pet_id)
-    info = {"name": pet.name, "age": pet.age}
-
-    return jsonify(info)
-    
